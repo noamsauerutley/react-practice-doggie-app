@@ -1,5 +1,10 @@
 import React from 'react'
 
+const dogCardStyles = {
+    width: "300px", 
+    margin: "20px"
+};
+
 const DogCard = (props) => {
     let dog = props.dog
     const imgURL = `https://random.dog/${dog}`
@@ -16,7 +21,7 @@ const DogCard = (props) => {
     const handleClick = (e) => props.toggleDogFavorite(dog)
 
     return(
-       <div style={{width: "300px", margin: "20px"}}>
+       <div style={dogCardStyles}>
             <img src={imgURL} height="150px" style={{display:"block", margin: "0 auto"}} />
             <button onClick={handleClick} >{faveStatus(dog)}</button>
         </div>
